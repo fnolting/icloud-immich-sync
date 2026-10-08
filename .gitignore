@@ -1,0 +1,28 @@
+# Secrets / local configuration
+.env
+.env.*
+!.env.example
+
+# Runtime / sync state
+data/*
+!data/.gitkeep
+
+# Temporary / downloaded files
+tmp/
+downloads/
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Logs
+*.log

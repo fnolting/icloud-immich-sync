@@ -1,0 +1,24 @@
+services:
+  icloud-immich-sync:
+    build:
+      context: .
+    container_name: icloud-immich-sync
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./data:/data
+      - ./tmp:/tmp/icloud
+
+    environment:
+      TZ: Europe/Vienna
+      PYTHONUNBUFFERED: "1"
+
+    healthcheck:
+      test: ["CMD", "python", "/app/sync.py", "--healthcheck"]
+      interval: 5m
+      timeout: 30s
+      retries: 3
+      start_period: 30s
