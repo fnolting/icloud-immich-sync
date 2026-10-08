@@ -26,3 +26,6 @@ venv/
 
 # Logs
 *.log
+
+# Local application data directory
+data/
